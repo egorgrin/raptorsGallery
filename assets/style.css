@@ -15,7 +15,6 @@
 *,
 *:before,
 *:after {
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -92,7 +91,11 @@ h6 {
 /*--------------------*/
 
 .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -127,7 +130,11 @@ h6 {
 
 
 .gallery {
+  display: -ms-grid;
   display: grid;
+
+
+  -ms-grid-rows: auto;
 
 
   grid-template-rows: auto;
@@ -139,39 +146,71 @@ h6 {
 }
 
 .album .gallery {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
 }
 
 .gal_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 350px;
 }
 
 .home .gal_item {
-  min-height: 350px;
+  max-height: 550px;
 }
 
 .album .gal_item {
-  min-height: 200px;
+  position: relative;
+  height: 200px;
+}
+
+.album .gal_item:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: url(/assets/img/icons/vektor-arrow.svg) center / 50px 50px no-repeat rgba(22, 22, 22, 0.8);
+}
+
+.album .gal_item:hover:before {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .gal_item img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
+  -o-object-position: center;
   object-position: center;
 }
 
 .img1 {
-  background-image: url("img1.webp");
+  background-image: url('img/gallery/img1.webp');
 }
 
 .image_info {
   padding: 20px;
   background-color: #1a1a1a;
   color: #fff;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
   flex-grow: 1;
 }
 
@@ -204,3 +243,26 @@ h6 {
 
 
 /* ---------Gallery Page--------- */
+
+
+/* --------- Album Page --------- */
+.album__view-more {
+  margin: 20px auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 150px;
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
