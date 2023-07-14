@@ -1,0 +1,206 @@
+:root {
+  --custom-fonts: 'Custom', sans-serif;
+  font-size: 16px;
+
+  --gal-date-color: #37b8eb;
+}
+
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  line-height: 1;
+  font-size: 1rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-family: var(--custom-fonts);
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li,
+nav li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* font-size: inherit;
+  font-weight: inherit; */
+}
+
+/*--------------------*/
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  padding: 50px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto 3rem auto;
+  padding: 0 30px;
+}
+
+
+.title {
+  text-align: center;
+}
+
+.title h2 {
+  font-size: 56px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+.title p {
+  font-size: 18px;
+  line-height: 29px;
+}
+
+/* ---------Main Page--------- */
+
+
+.gallery {
+  display: grid;
+
+
+  grid-template-rows: auto;
+}
+
+.home .gallery {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.album .gallery {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.gal_item {
+  display: flex;
+  flex-direction: column;
+  min-height: 350px;
+}
+
+.home .gal_item {
+  min-height: 350px;
+}
+
+.album .gal_item {
+  min-height: 200px;
+}
+
+.gal_item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.img1 {
+  background-image: url("img1.webp");
+}
+
+.image_info {
+  padding: 20px;
+  background-color: #1a1a1a;
+  color: #fff;
+  flex-grow: 1;
+}
+
+.image_info h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5em;
+  margin-bottom: 10px;
+}
+
+.date {
+  position: relative;
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--gal-date-color);
+  padding-left: 25px;
+}
+
+.date::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--gal-date-color);
+  border-radius: 3px;
+  background-color: var(--gal-date-color);
+}
+
+
+/* ---------Gallery Page--------- */
